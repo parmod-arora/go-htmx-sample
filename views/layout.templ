@@ -1,0 +1,37 @@
+package views
+
+templ header(title string) {
+	<head>
+		<title>{ title }</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="/static/script/htmx.min.js"></script>
+		<script src="/static/script/response-targets.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	</head>
+}
+
+templ footer() {
+	<footer class="bg-blue-600 p-4"></footer>
+}
+
+templ nav(){
+	<nav class="bg-blue-600 p-4">
+		<a class="text-gray-200" href="/">Home</a>
+		<a class="text-gray-200" href="/register">Register</a>
+		<a class="text-gray-200" href="/login">Login</a>
+		<a class="text-gray-200" href="/about">About</a>
+	</nav>
+}
+
+templ Layout(contents templ.Component, title string) {
+	@header(title)
+	<body class="flex flex-col h-full">
+	@nav()
+	<main class="flex-1">
+		@contents
+	</main>
+	</body>
+	@footer()
+}

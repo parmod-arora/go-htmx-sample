@@ -1,0 +1,18 @@
+package views
+
+templ Index(title string) {
+    <div hx-target="this" hx-swap="outerHTML">
+        <h1>Todos List Page</h1>
+        {title}
+
+        // redirect to internal page
+        <button 
+          type="button" class="btn btn-primary" 
+          hx-get="/todos/1"
+          hx-push-url="true"
+        >
+          Go to nested page
+        </button>
+        
+    </div>
+}

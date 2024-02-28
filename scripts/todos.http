@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:8080
+
+# @name fetchAll
+GET {{baseUrl}}/api/todos/
